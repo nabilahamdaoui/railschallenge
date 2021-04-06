@@ -30,4 +30,12 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  login: "Please log in"
+  notification:
+    user:
+      archived: "The user %{email} was archived"
+      unarchived: "The user %{email} was unarchived"
+  errors:
+    user:
+      disabled: "Your account has been disabled"
+      archive: "You can't archive your account"

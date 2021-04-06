@@ -9,13 +9,13 @@ class ApplicationController < ActionController::API
   end
 
   def logged_in?
-    !!current_user
+    # Archived users can't log in
+    !!current_user && !current_user.archived
   end
 
   def authorize!
     return true if logged_in?
-
-    render json: { message: 'Please log in' }, status: :unauthorized
+    render json: { message: current_user.archived ? I18n.t('errors.user.disabled') : I18n.t(:login) }, status: :unauthorized
   end
 
   def render_jsonapi_internal_server_error(exception)

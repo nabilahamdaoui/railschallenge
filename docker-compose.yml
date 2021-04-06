@@ -10,6 +10,11 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     volumes:
       - db_data:/var/lib/mysql
+  redis_db:
+    image: redis:latest
+    restart: always
+    ports:
+      - 6379:6379
   api:
     build: .
     command: bash -c "bundle install; bundle exec rails s -p 3189 -b 0.0.0.0"
@@ -19,5 +24,8 @@ services:
       - "3189:3189"
     depends_on:
       - mysql
+      - redis_db
+    environment:
+      REDIS_URL: redis://redis_db:6379
 volumes:
   db_data:

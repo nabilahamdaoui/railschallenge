@@ -65,4 +65,16 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  # TODO: Update config
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'gmail.com',
+    user_name:            'lekkercode@gmail.com',
+    password:             'XXXXXXXXXXXX',
+    authentication:       'plain',
+    enable_starttls_auto: true }
+
+  config.webhook_url = 'https://webhook.site/02f1c7fe-5031-4a7d-89f3-ebe42b720bc8'
 end

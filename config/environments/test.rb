@@ -59,4 +59,7 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
+
+  # TODO: Add config.action_mailer.smtp_settings, config.webhook_url
+
 end

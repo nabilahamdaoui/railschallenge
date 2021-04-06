@@ -22,6 +22,14 @@ gem 'jwt'
 # seriaization & json_api logic
 gem 'jsonapi.rb'
 
+# internationalization and localization (i18n)
+gem 'i18n'
+
+# audit actions
+gem 'audited', '~> 4.9'
+
+# background processing
+gem 'sidekiq'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
